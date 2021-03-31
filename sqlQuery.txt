@@ -1,0 +1,85 @@
+/*create table */
+
+tabel 1 =>	create table stud_info (id number(11) primary key, name varchar(200), rollno number(3), address varchar(255));
+
+table 2 =>  create table class(id number(11) primary key, class char(20));
+
+-----------------------------------------------------------------------------------------------------------------
+
+/* select table */
+
+
+select * from stud_info;
+
+-------------------------------------------------------------------------------------------------------------------
+
+/* insert data into table*/
+
+
+(1) insert into stud_info values(&id,'&name',&rollono,'&address',&class);
+(2) INSERT INTO `stud_info`(`id`, `rollNo`, `studentName`, `studentAddress`) VALUES ([value-1],[value-2],[value-3],[value-4]);
+
+	table 1	=>INSERT INTO `stud_info`(`id`, `rollNo`, `studentName`, `studentAddress`) VALUES (3,103,'mihir','rajakot');
+	table 2	=>insert into class values(&id,'&class');
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+/*update data*/
+
+UPDATE `stud_info` SET `id`=[value-1],`rollNo`=[value-2],`studentName`=[value-3],`studentAddress`=[value-4] WHERE 1
+
+	=> update stud_info set address = 'bhavnagar' where id=1;
+	
+-----------------------------------------------------------------------------------------------------------------------------------
+
+/*delete data*/
+
+DELETE FROM `stud_info` WHERE 0
+
+	=> DELETE FROM `stud_info` WHERE id = 2 ;
+	
+-------------------------------------------------------------------------------------------------------------------------------------
+
+/* inser join / join query */
+
+select * from stud_info s join class c on s.class = c.id;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+/* right join query */
+
+select * from stud_info s right join class c on s.class = c.id order by name;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+/* left join query */
+
+select * from stud_info s left join class c on s.class = c.id order by name;
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+/* cross join query */
+	SELECT * FROM table1 CROSS JOIN table2;
+
+select * from stud_info s cross join class c;
+
+
+
+select s.name,c.class from stud_info s cross join class c order by name;
+		
+---------------------------------------------------------------------------------------------------------------------------------------
+/*alter command */
+
+
+(1) modify existing table
+
+
+	=> alter tabel stud_info modify (class varchar(50));
+	
+(2) drop existing column
+
+	=> alter tabel stud_info drop column mark;
+
+(3) Rename column
+	
+	=> alter tabel stud_info rename column name to studName;
